@@ -1,189 +1,316 @@
 /* 🎨 Paleta de colores Andina */
 :root {
-    --color-primario: #1565C0;   /* Azul intenso - confianza, cielo */
-    --color-secundario: #2E7D32; /* Verde - naturaleza, salud */
-    --color-terciario: #E65100;  /* Naranja - energía, comunidad */
-    --color-alerta: #B71C1C;     /* Rojo - peligro, advertencia */
-    --color-fondo: #FAFAFA;      /* Fondo blanco suave */
-    --color-texto: #424242;      /* Gris oscuro para mejor legibilidad */
-    --color-borde: #BDBDBD;      /* Gris claro para bordes */
-  }
-  
-  /* 🎨 Estilos globales */
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* 🏷️ Encabezados */
-  h1, h2, h3 {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: var(--color-primario);
-  }
-  
-  /* 🔘 Botones Generales */
-  .btn {
-    display: inline-block;
-    padding: 12px 18px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease-in-out;
-    text-transform: uppercase;
-  }
-  
-  /* 🟦 Botón principal (Azul - confianza) */
-  .btn-primario {
-    background-color: var(--color-primario);
-    color: white;
-  }
-  
-  .btn-primario:hover {
-    background-color: #0D47A1;
-  }
-  
-  /* 🟩 Botón secundario (Verde - salud, naturaleza) */
-  .btn-secundario {
-    background-color: var(--color-secundario);
-    color: white;
-  }
-  
-  .btn-secundario:hover {
-    background-color: #1B5E20;
-  }
-  
-  /* 🟧 Botón terciario (Naranja - comunidad, energía) */
-  .btn-terciario {
-    background-color: var(--color-terciario);
-    color: white;
-  }
-  
-  .btn-terciario:hover {
-    background-color: #BF360C;
-  }
-  
-  /* 🔴 Botón de alerta (Rojo - peligro, eliminar) */
-  .btn-alerta {
-    background-color: var(--color-alerta);
-    color: white;
-  }
-  
-  .btn-alerta:hover {
-    background-color: #7F0000;
-  }
-  
-  /* 📦 Tarjetas */
-  .card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-    border-left: 6px solid var(--color-secundario);
-    margin-bottom: 20px;
-  }
-  
-  /* 📢 Alertas */
-  .alerta {
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: bold;
-  }
-  
-  .alerta-danger {
-    background-color: var(--color-alerta);
-    color: white;
-  }
-  
-  .alerta-info {
-    background-color: var(--color-primario);
-    color: white;
-  }
-  
-  .alerta-warning {
-    background-color: var(--color-terciario);
-    color: white;
-  }
-  
-  /* 🖥️ Layout */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
+  --color-primario: #1565C0;
+  --color-secundario: #2E7D32;
+  --color-terciario: #E65100;
+  --color-alerta: #B71C1C;
+  --color-fondo: #FAFAFA;
+  --color-texto: #424242;
+  --color-borde: #BDBDBD;
+}
 
+/* 🎨 Estilos globales */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
+}
 
-  /* 🟦 Header */
+/* 🏷️ Encabezados */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-primario);
+}
+
+/* 🔘 Botones Generales */
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+/* 🟦 Botón principal (Azul - confianza) */
+.btn-primario {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #0D47A1;
+}
+
+/* 🟩 Botón secundario (Verde - salud, naturaleza) */
+.btn-secundario {
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+.btn-secundario:hover {
+  background-color: #1B5E20;
+}
+
+/* 🟧 Botón terciario (Naranja - comunidad, energía) */
+.btn-terciario {
+  background-color: var(--color-terciario);
+  color: white;
+}
+
+.btn-terciario:hover {
+  background-color: #BF360C;
+}
+
+/* 🔴 Botón de alerta (Rojo - peligro, eliminar) */
+.btn-alerta {
+  background-color: var(--color-alerta);
+  color: white;
+}
+
+.btn-alerta:hover {
+  background-color: #7F0000;
+}
+
+/* 📦 Tarjetas */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid var(--color-secundario);
+  margin-bottom: 20px;
+}
+
+/* 📢 Alertas */
+.alerta {
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.alerta-danger {
+  background-color: var(--color-alerta);
+  color: white;
+}
+
+.alerta-info {
+  background-color: var(--color-primario);
+  color: white;
+}
+
+.alerta-warning {
+  background-color: var(--color-terciario);
+  color: white;
+}
+
+/* 🖥️ Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 🟦 Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-primario);
-    color: white;
-    padding: 15px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primario);
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  width: 10%;
+  height: auto;
+  margin-right: 10px;
+  padding-left: 10%;
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.header-nav ul li a:hover {
+  color: var(--color-terciario);
+}
+
+/* 🔽 Footer */
+.footer {
+  background-color: var(--color-secundario);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.footer-info {
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: var(--color-terciario);
+}
+
+/* 🎨 Media Queries para hacer el diseño responsivo */
+
+/* Móviles */
+@media (max-width: 768px) {
+  .FondoHero {
+    width: 100%;
+    height: auto;
+
   }
-  
-  .header-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header-logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .header-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .header-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .header-nav ul li a:hover {
-    color: var(--color-terciario);
-  }
-  
-  /* 🔽 Footer */
-  .footer {
-    background-color: var(--color-secundario);
-    color: white;
+  .header {
+    flex-direction: column;
     text-align: center;
+    padding: 20px;
+  }
+
+  .header-logo img {
+    width: 40%;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .card {
     padding: 15px;
-    margin-top: 20px;
   }
-  
-  .footer-info {
+
+  .btn {
     font-size: 14px;
+    padding: 10px 15px;
   }
-  
-  .footer-links {
-    margin-top: 10px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
   }
-  
-  .footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .footer-links a:hover {
-    color: var(--color-terciario);
+
+  .container {
+    padding: 0 30px;
   }
-  
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 11px 16px;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 1200px) {
+  .header {
+    padding: 20px 40px;
+  }
+
+  .header-logo img {
+    width: 10%;
+  }
+
+  .header-nav ul {
+    gap: 25px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+}
