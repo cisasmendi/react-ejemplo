@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 const title = import.meta.env.VITE_APP_TITLE;
 // importar logo de assets
-import logo from '../assets/img/logo.png';
+import logo from '../assets/img/logo.svg';
 import "./styles/Header.css";
 import { useState } from 'react';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false); // El menú debe estar cerrado por defecto
   const toggleMenu = () => {
+    console.log('toggleMenu');
     setMenuOpen(!menuOpen);
   };
 
@@ -30,8 +30,13 @@ const Header = () => {
           <li><Link to="/contacto">Contacto</Link></li>
         </ul>
       </nav>
+      {/* Agregar un ícono de hamburguesa para móvil */}
       <button className="menu-toggle" onClick={toggleMenu}>
-        <span className="hamburger"></span>
+        <div className={`hamburger ${menuOpen ? 'open' : ''}`}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </button>
     </header>
   );

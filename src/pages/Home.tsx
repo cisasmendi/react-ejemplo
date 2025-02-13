@@ -6,7 +6,7 @@ import fond_hero from '../assets/img/back-habitaciones.jpg';
 const Home = () => {
   return (
     <div>
-      <img className="FondoHero" src={fond_hero} alt="Fondo hero" />
+      <img className="hero-image-bg" src={fond_hero} alt="hero-image-bg" />      
       <div className="text-container">
         <span className="word word1">Confianza</span>
         <span className="word word2">Calidad</span>
@@ -16,7 +16,8 @@ const Home = () => {
         <span className="word word6">Innovación</span>
         <span className="word word7">Seguridad</span>
       </div>
-      <div className="">
+      
+      <div className="hero-container">
         {/* Contenido principal del home */}
         <section className="Intro">
           <h1>{title}</h1>
