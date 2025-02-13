@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"; 
 const title = import.meta.env.VITE_APP_TITLE;
 // importar logo de assets
-import logo from '../assets/img/logo.svg';
+import logo from '../assets/img/logovector.svg';
 import "./styles/Header.css";
 import { useState } from 'react';
 
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-logo">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo"  className="{color:white}"/>
         <h1 style={{ color: "#FAFAFA", paddingLeft: "5%" }}>{title}</h1>
       </div>
       <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>

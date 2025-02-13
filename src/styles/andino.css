@@ -1,13 +1,34 @@
 /* 🎨 Paleta de colores Andina */
 :root {
   --color-primario: #1565C0;
-  --color-secundario: #315783;
+  --color-secundario: #068ac7ff;  
+  --color-11:#93cbe7ff;
+  --color-10:#5db0dbff;
+  --color-12:#6c4c98ff;
+  --color-13:#553e8cff;
   --color-terciario: #E65100;
   --color-alerta: #B71C1C;
   --color-fondo: #FAFAFA;
   --color-texto: #424242;
   --color-borde: #BDBDBD;
+
 }
+
+/* 🎨 Paleta de colores Andina Mejorada */
+:root {
+  --color-primario: #1565C0; /* Azul más profundo */
+  --color-secundario: #0277BD; /* Un tono ligeramente más oscuro para más contraste */
+  --color-11: #81D4FA; /* Azul suave, perfecto para fondos o detalles sutiles */
+  --color-10: #4FC3F7; /* Azul intermedio para botones o elementos destacados */
+  --color-12: #7E57C2; /* Violeta que aporta sofisticación sin perder frescura */
+  --color-13: #7B1FA2; /* Un tono más profundo de violeta para contraste */
+  --color-terciario: #FF7043; /* Un naranja suave que no sea tan fuerte, pero aún vibrante */
+  --color-alerta: #D32F2F; /* Rojo alerta más suave y accesible */
+  --color-fondo: #F5F5F5; /* Un blanco grisáceo para suavizar el fondo */
+  --color-texto: #212121; /* Texto más oscuro para mejor legibilidad */
+  --color-borde: #BDBDBD; /* Gris claro para bordes y contornos sutiles */
+}
+
 
 /* 🎨 Estilos globales */
 body {
