@@ -1,7 +1,7 @@
 <script>
   import Sidebar from "./layout/Sidebar.svelte";
 
-  import Wrapper from "./Home.svelte";
+  import Wrapper from "./routes/Home/Page.svelte";
 
   import Footer from "./layout/Footer.svelte";
 
