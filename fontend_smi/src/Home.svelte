@@ -1,6 +1,6 @@
 <script>
   import Warpper from "./layout/Warpper.svelte";
-  const Name = import.meta.env.VITE_NAME_SITE;
+  const Name = import.meta.env.VITE_APP_NAME;
 
 </script>
 
