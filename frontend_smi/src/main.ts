@@ -1,13 +1,13 @@
 import { mount } from 'svelte'
-import './css/app.css'
-import "./css/main.css";
-import "./css/fontawesome-all.min.css";
-import "./css/noscript.css";
 
-import App from './App.svelte'
+
+//import App from './public/Index.svelte'
+import App from './private/Index.svelte'
+
 
 const app = mount(App, {
   target: document.getElementById('app')!,
 })
+
 
 export default app
