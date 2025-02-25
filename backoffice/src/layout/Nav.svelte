@@ -2,8 +2,15 @@
     export let name = "John Doe";
     export let role = "Admin";
     export let avatar = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32";
-
+    import { link } from "svelte5-router";
     export let title = "Sistema de SMI"
+
+    let listLinks = [
+        { name: "Usuarios", href: "/users" },
+        { name: "Afiliados", href: "/affiliates" },
+        { name: "Pagos", href: "/payments" },
+        { name: "Carnet de Afiliación", href: "/generate-card" }
+    ]
 
     let isSidebarOpen = false;
     let isDropdownOpen = false;
@@ -81,17 +88,8 @@
 
 <aside class="fixed  left-0 top-0 h-screen bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 pt-20 z-20 transition-transform duration-300 transform lg:translate-x-0" class:translate-x-[-100%]={!isSidebarOpen}>
     <nav class="space-y-1 px-3">
-        <a href="#users" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-            Usuarios
-        </a>
-        <a href="#affiliates" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-            Afiliados
-        </a>
-        <a href="#payments" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-            Pagos
-        </a>
-        <a href="#generate-card" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
-            Carnet de Afiliación
-        </a>
+        {#each listLinks as link2}
+            <a href={link2.href}   class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg" use:link > {link2.name}</a>   
+        {/each}       
     </nav>
 </aside>
