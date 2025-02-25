@@ -1,6 +1,6 @@
 <script>
     import { Router, Route } from "svelte5-router"; // manejo de rutas
-    import Login from "./public/component/Login.svelte";
+    import Login from "./public/Login.svelte";
     // @ts-ignore
     import Private from "./private/index.svelte";
     export let url = "";

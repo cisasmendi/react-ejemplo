@@ -9,9 +9,7 @@
 </script>
 
 <Nav></Nav>
-
 <!-- Dashboard Section -->
-
 <DashBoard>
   <Table></Table>
   <Modal></Modal>
