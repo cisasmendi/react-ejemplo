@@ -14,6 +14,80 @@
     {label: "Fecha de Pago", key: "paymentDate"},
     {label: "Monto", key: "amount"},
   ];
+
+  const data = [
+  {
+    cuil: "20-12345678-9",
+    name: "Juan",
+    lastName: "Perez",
+    paymentDate: "2024-02-01",
+    amount: 15000,
+  },
+  {
+    cuil: "20-87654321-9",
+    name: "Maria",
+    lastName: "Gomez",
+    paymentDate: "2024-02-05",
+    amount: 20000,
+  },
+  {
+    cuil: "27-23456789-0",
+    name: "Carlos",
+    lastName: "Lopez",
+    paymentDate: "2024-01-28",
+    amount: 18000,
+  },
+  {
+    cuil: "23-34567890-1",
+    name: "Ana",
+    lastName: "Martinez",
+    paymentDate: "2024-01-15",
+    amount: 22000,
+  },
+  {
+    cuil: "21-45678901-2",
+    name: "Pedro",
+    lastName: "Garcia",
+    paymentDate: "2024-02-10",
+    amount: 25000,
+  },
+  {
+    cuil: "22-56789012-3",
+    name: "Lucia",
+    lastName: "Sanchez",
+    paymentDate: "2024-02-03",
+    amount: 17000,
+  },
+  {
+    cuil: "24-67890123-4",
+    name: "Jorge",
+    lastName: "Ramirez",
+    paymentDate: "2024-01-30",
+    amount: 19000,
+  },
+  {
+    cuil: "25-78901234-5",
+    name: "Elena",
+    lastName: "Torres",
+    paymentDate: "2024-02-12",
+    amount: 23000,
+  },
+  {
+    cuil: "26-89012345-6",
+    name: "Ricardo",
+    lastName: "Diaz",
+    paymentDate: "2024-02-08",
+    amount: 16000,
+  },
+  {
+    cuil: "20-90123456-7",
+    name: "Sofia",
+    lastName: "Fernandez",
+    paymentDate: "2024-01-20",
+    amount: 21000,
+  },
+];
+
 </script>
 
 <LayoutPage>
@@ -21,7 +95,7 @@
     <h1 class="text-2xl font-bold text-gray-800 mb-4">
       Gestión de Pagos
     </h1>
-   <Table title="Pagos" showSearch=true showAddButton=true addButtonLabel="Nuevo Pago" labelData={listLabels} />
+   <Table title="Pagos" showSearch=true showAddButton=true addButtonLabel="Nuevo Pago" labelData={listLabels} {data}/>
   <Modal></Modal>
   </Panel>
 </LayoutPage>
