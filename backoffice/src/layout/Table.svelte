@@ -7,9 +7,16 @@
         labelData = [],
         data = [],
         searchQuery = "",
+        pagination = {
+            page: 1,
+            perPage: 10,
+            total: 0,
+        },
+        getRow,
+        listenAddButton,
+        paginate,
+        search
     } = $props();
-
-
 </script>
 
 <div
@@ -30,6 +37,10 @@
                     <input
                         type="text"
                         bind:value={searchQuery}
+                        onkeyupcapture={(e) => {                           
+                                search(searchQuery);                            
+                        }}
+                        
                         placeholder="Buscar..."
                         class="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
@@ -51,6 +62,7 @@
             {#if showAddButton}
                 <button
                     class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center whitespace-nowrap"
+                    onclick={listenAddButton}
                 >
                     <svg
                         class="w-5 h-5 mr-1"
@@ -83,25 +95,40 @@
                     {/each}
                 </tr>
             </thead>
-           <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-800">
-  {#each data as row}
-    <tr>
-      {#each labelData as label}
-        <td class="px-4 md:px-6 py-4 whitespace-nowrap text-sm">{row[label.key]}</td>
-      {/each}
-    </tr>
-  {/each}
-</tbody>
+            <tbody
+                class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-800"
+            >
+                {#each data as row}
+                    <tr
+                        class="cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 transition"
+                        onclick={() => getRow(row)}
+                    >
+                        {#each labelData as label}
+                            <td
+                                class="px-4 md:px-6 py-4 whitespace-nowrap text-sm"
+                            >
+                                {row[label.key]}
+                            </td>
+                        {/each}
+                    </tr>
+                {/each}
+            </tbody>
         </table>
     </div>
     <div class="flex justify-between items-center p-4">
         <button
+            disabled={pagination.page === 1}
+            onclick={() => paginate(-1)}
             class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white rounded disabled:opacity-50"
         >
             Anterior
         </button>
-        <span class="text-gray-700 dark:text-white">Página 20 de 25</span>
+        <span class="text-gray-700 dark:text-white">
+            Página {pagination.page} de {pagination.total}
+        </span>
         <button
+            disabled
+            onclick={() => paginate(1)}
             class="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white rounded disabled:opacity-50"
         >
             Siguiente
