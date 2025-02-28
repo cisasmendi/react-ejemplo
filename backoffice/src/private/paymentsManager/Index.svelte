@@ -1,8 +1,8 @@
 <script>
   import LayoutPage from "../layout/LayoutPage.svelte";
-  import Table from "../../layout/Table.svelte";
-  import Modal from "../../layout/Modal.svelte";
-  import Panel from "../../layout/Panel.svelte";
+  import Table from "../../lib/Componets/Table/Table.svelte";
+  import Modal from "$lib/Componets/Modal.svelte";
+  import Panel from "../../lib/layout/Panel.svelte";
 
   const listLabels = [
     { label: "Cuil", key: "cuil" },
@@ -95,21 +95,18 @@
     <h1 class="text-2xl font-bold text-gray-800 mb-4">Gestión de Pagos</h1>
     <Table
       getRow={(row) => {
-        console.log("🚀 ~ row:", row);
+        hiddenEnable = true;    
       }}
-      listenAddButton={() => {   
-        hiddenEnable = true;     
-      }}
+     
       paginate={(page) => {
         console.log("🚀 ~ page:", page);
       }}
       search={(query) => {
         console.log("🚀 ~ query:", query);
       }}
+     
       title="Pagos"
       showSearch="true"
-      showAddButton="true"
-      addButtonLabel="Nuevo Pago"
       labelData={listLabels}
       {data}
     />
@@ -117,46 +114,70 @@
 
 </LayoutPage>
 
-<Modal {hiddenEnable}>
+<Modal title={"Nuevo pago"} {hiddenEnable}
+listenclose={() => {
+  hiddenEnable = false;
+  console.log("🚀 ~ hiddenEnable:", hiddenEnable)
+}}
+>
   <div id="modalContent" class="mb-4">
     <form id="userForm" class="space-y-4">
-      <div>
-        <label
-          for="name"
-          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >Name</label
-        >
+      <div class="flex flex-col">
+        <label for="cuil" class="text-sm font-semibold text-gray-600">
+          Cuil
+        </label>
         <input
-          id="name"
           type="text"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          placeholder="Enter name"
+          id="cuil"
+          name="cuil"
+          class="px-4 py-2 border border-gray-300 rounded-lg"
         />
       </div>
-      <div>
-        <label
-          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >Email</label
-        >
+      <div class="flex flex-col">
+        <label for="name" class="text-sm font-semibold text-gray-600">
+          Nombre
+        </label>
         <input
-          type="email"
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          placeholder="Enter email"
+          type="text"
+          id="name"
+          name="name"
+          class="px-4 py-2 border border-gray-300 rounded-lg"
         />
       </div>
-      <div>
-        <label
-          class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-          >Role</label
-        >
-        <select
-          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-        >
-          <option>User</option>
-          <option>Admin</option>
-          <option>Editor</option>
-        </select>
+      <div class="flex flex-col">
+        <label for="lastName" class="text-sm font-semibold text-gray-600">
+          Apellido
+        </label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          class="px-4 py-2 border border-gray-300 rounded-lg"
+        />
       </div>
+      <div class="flex flex-col">
+        <label for="paymentDate" class="text-sm font-semibold text-gray-600">
+          Fecha de Pago
+        </label>
+        <input
+          type="date"
+          id="paymentDate"
+          name="paymentDate"
+          class="px-4 py-2 border border-gray-300 rounded-lg"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label for="amount" class="text-sm font-semibold text-gray-600">
+          Monto
+        </label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          class="px-4 py-2 border border-gray-300 rounded-lg"
+        />
+      </div>
+    
     </form>
   </div>
   <div class="flex justify-end gap-2">
@@ -170,7 +191,7 @@
     <button
       id="modalAction"
       class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-      >Save User</button
+      >Guardar</button
     >
   </div>
 </Modal>

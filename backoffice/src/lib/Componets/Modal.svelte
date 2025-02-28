@@ -1,8 +1,5 @@
 <script>
-    let { hiddenEnable = false,listenclose } = $props();
-
-
-
+    let {title, hiddenEnable = false,listenclose } = $props();
 </script>
 
 <div
@@ -11,6 +8,7 @@
         ? 'hidden'
         : ''} fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center z-50"
 >
+    <!-- svelte-ignore slot_element_deprecated -->
     <div
         class="relative bg-white dark:bg-gray-800 p-6 rounded-lg w-full max-w-lg mx-4"
     >
@@ -19,7 +17,7 @@
                 class="text-lg font-bold text-gray-900 dark:text-white"
                 id="modalTitle"
             >
-                Add New User
+                {title}
             </h3>
             <button
                 aria-label="Close modal"
@@ -41,6 +39,8 @@
                 </svg>
             </button>
         </div>
-        <slot></slot>
+        <slot>
+            
+        </slot>
     </div>
 </div>

@@ -1,6 +1,6 @@
 <script>
-  import Panel from "../../layout/Panel.svelte";
-  import Table from "../../layout/Table.svelte";
+  import Panel from "../../lib/layout/Panel.svelte";
+  import Table from "../../lib/Componets/Table/Table.svelte";
   import LayoutPage from "../layout/LayoutPage.svelte";
 
   const listLabels = [

@@ -1,6 +1,6 @@
 <script>
-  import DashBoard from "../../layout/DashBoard.svelte";
-  import Nav from "../../layout/Nav.svelte";
+  import DashBoard from "../../lib/layout/DashBoard.svelte";
+  import Nav from "../../lib/Componets/Nav.svelte";
 </script>
 
 <Nav></Nav>
